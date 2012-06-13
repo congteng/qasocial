@@ -1,0 +1,6 @@
+$('.display_area').html("<%= recursion_board_without_button @boards%>")
+$('.display_area_btn').html("<%= recursion_board_with_button @boards %>")
+$('.addfoos input[type=text]').val("")
+$('.addfoos').hide("slow");
+
+$('.labels').html("<%= j render 'functionalities/labels'%>")

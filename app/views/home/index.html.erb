@@ -1,0 +1,12 @@
+<h3>WelCome here</h3>
+<hr>
+进入网站规划设计页面 &nbsp;&nbsp;&nbsp;<%= link_to "click me", plan_home_index_path %>
+<hr>
+<% if @users %>
+
+<h5>注册用户列表</h5>
+
+<% @users.each do |user| %>
+  <p>User: <%=link_to user.name, user %></p>
+<% end %>
+<% end -%>

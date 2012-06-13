@@ -1,0 +1,82 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.addboard{
+	width: 400px;
+	height: 150px;
+
+	
+	margin-top: -355px;
+	margin-left: 500px;
+
+	background-color: orange;
+	padding: 8px;
+	display: none;
+	span{
+		color: black;
+	}
+	.info{
+		color: lightblue;
+	}
+	.close{
+		position: absolute;
+		margin: 0 0 130px 380px;
+		width: auto;
+		height: auto;
+	}
+}
+
+.addfoos{
+	width: 400px;
+	height: 150px;
+
+	
+	margin-top: -255px;
+	margin-left: 500px;
+
+	background-color: green;
+	padding: 10px;
+	display: none;
+	span{
+		color: black;
+	}
+	.info{
+		color: lightblue;
+	}
+	.close{
+		position: absolute;
+		margin: 0 0 220px 380px;
+		width: auto;
+		height: auto;
+	}
+}
+
+h5{
+	font-size: 16px;
+	color: white;
+}
+h6{
+	font-size: 13px;
+	color: orange;
+}
+
+a{
+	color: white;
+}
+.button_to{
+	background-color: yellow;
+}
+
+.foo{
+	padding-top: 10px;
+	width: 300px;
+	height: 30px;
+}
+
+.progress_chooser{
+	margin-top: -37px;
+	margin-left: 330px;
+	position: absolute;
+
+}

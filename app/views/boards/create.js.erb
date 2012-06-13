@@ -1,0 +1,7 @@
+$('.display_area').html("<%= recursion_board_without_button @boards%>")
+$('.display_area_btn').html("<%= recursion_board_with_button @boards %>")
+
+$('.addboard input[type=text]').val("")
+$('.add_top_b input[type=text]').val("")
+
+$('.addboard').hide("slow")

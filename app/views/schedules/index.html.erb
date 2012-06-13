@@ -1,0 +1,11 @@
+<% unless @schedules.empty? %>
+	<%= @schedules.each do |s| %>
+		<%= s.label %>
+	<% end -%>
+<% else %>
+	暂无时间表...
+<% end -%>
+<br>
+<% if current_user %>
+	<%= link_to "新建时间表", new_user_schedule_path(current_user) %>
+<% end -%>

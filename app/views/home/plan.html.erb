@@ -1,0 +1,48 @@
+<%= content_for :styles do %>
+	<%= stylesheet_link_tag "boards" %>
+<% end -%>
+
+<%= render "functionalities/labels" %>
+
+<h3>开发规划(预览区域)</h3>
+<span class="label label-default">网站分为两大模块（增肌/减肥）</span>
+
+
+<div class='display_area'>
+	<%= recursion_board_without_button @boards %>
+</div>
+
+<hr>
+
+<h3>开发规划(编辑区域)</h3>
+
+这里是用来增加最高级别模块的
+<div class='add_top_b'>
+	<%= simple_form_for Board.new, :remote => true do |f| %>
+		<%= f.input :name, :label => "模块名称" %>
+		<%= f.submit "增加模块" %>
+	<% end -%>
+</div>
+<div class='display_area_btn'>
+	<%= recursion_board_with_button @boards %>
+</div>
+
+<div class='addfoos'>
+	<div class='close'>X</div>
+	<%= simple_form_for Functionality.new, :remote => true do |f| %>
+		<div class='info'>给<span></span>增加功能</div>
+		<%= f.input :say, :label => "功能细节" %>
+		<input type='hidden' name='b_id'>
+		<%= f.submit "确认增加功能"%>
+	<% end -%>
+</div>
+
+<div class='addboard'>
+	<div class='close'>X</div>
+	<%= simple_form_for Board.new, :remote => true do |f| %>
+		<div class='info'>给<span></span>增加子模块</div>		
+		<%= f.input :name, :label => "名称" %>
+		<input type="hidden" name='b_id'>
+		<%= f.submit "确认增加子模块" %>
+	<% end -%>
+</div>

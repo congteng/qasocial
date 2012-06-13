@@ -1,0 +1,28 @@
+<%= content_for :styles do %>
+	<%= stylesheet_link_tag "functionalities" %>
+<% end -%>
+
+<%= render "functionalities/labels" %>
+
+<% @foos.each do |foo| %>
+	<span id='label-<%= foo.id %>' class='label label-<%= foo_color foo %>'><a href='/functionalities/<%= foo.id%>'><%= foo.say %></a></span>
+
+	<div class='f_foo'>
+		<div class="progress progress-info progress-striped active">
+			<div class="bar" style="width: <%= foo.progress %>%;"></div>
+		</div>
+		<span class='f_progress_chooser'>
+			<a data-val='0' data-id='<%= foo.id%>'>0%</a> |
+			<a data-val='20' data-id='<%= foo.id%>'>20%</a> |
+			<a data-val='40' data-id='<%= foo.id%>'>40%</a> |
+			<a data-val='60' data-id='<%= foo.id%>'>60%</a> | 
+			<a data-val='80' data-id='<%= foo.id%>'>80%</a> | 
+			<a data-val='100' data-id='<%= foo.id%>'>100%</a> 
+		</span>
+	</div>
+<% end -%>
+
+<% if @foos.empty? %>
+	暂时没有...
+<% end -%>
+
