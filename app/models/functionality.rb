@@ -11,5 +11,7 @@ class Functionality
 
   	belongs_to :board
 
+  	belongs_to :user
+
   	attr_accessible :say, :status, :progress
 end

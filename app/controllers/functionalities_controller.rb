@@ -1,5 +1,11 @@
 class FunctionalitiesController < ApplicationController
 
+	before_filter :which_user
+
+	def which_user
+		@user = User.find params[:user_id]
+	end
+
 	def index
 		status = params[:status]
 		@foos = Functionality.where(:status => status)						
@@ -12,11 +18,13 @@ class FunctionalitiesController < ApplicationController
 		f.board = p_board
 		f.save
 
-		@boards = Board.where(:board_id => nil)
-		
+		@user.functionalities << f
+
+		@boards = @user.boards
 	end
 
 	def update
+
 		f = Functionality.find params[:id]
 		progress = params[:progress]
 		if progress == 0.to_s
@@ -32,12 +40,13 @@ class FunctionalitiesController < ApplicationController
 	end
 
 	def destroy
+
 		f = Functionality.find params[:id]
 		f.destroy
-		@boards = Board.where(:board_id => nil)
 	end
 
 	def show
+
 		@f = Functionality.find params[:id]
 	end
 

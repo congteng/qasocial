@@ -1,6 +1,6 @@
 <div class='labels'>
 	<ul>
-		<li><span class="label label-default">共有<span class="label label-warning"><%= b_count %></span>个模块<span class="label label-important"><%= rel_count(nil) %></span>个功能,进度如下：</span></li>
+		<li><span class="label label-default">共有<span class="label label-warning"><%= b_count(@user) %></span>个模块<span class="label label-important"><%= rel_count(nil) %></span>个功能,进度如下：</span></li>
 		<ul>
 			<li><span class="label label-important"><%= link_to "等待开发", functionalities_path(:status => "0") %> (<%= rel_count "0" %>)</span></li>
 			<li><span class="label label-info"><%= link_to "正在开发", functionalities_path(:status => "1") %> (<%= rel_count "1" %>)</span></li>

@@ -8,7 +8,7 @@ module FunctionalitiesHelper
 		end
 	end
 
-	def b_count
-		Board.all.size
+	def b_count user
+		Board.where(:user_id => user.id).size
 	end
 end

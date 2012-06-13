@@ -1,7 +1,9 @@
-$('.display_area').html("<%= recursion_board_without_button @boards%>")
-$('.display_area_btn').html("<%= recursion_board_with_button @boards %>")
+$('.display_area').html("<%= recursion_board_without_button @boards.where(:board_id => nil)%>")
+$('.display_area_btn').html("<%= recursion_board_with_button @boards.where(:board_id => nil) %>")
 
 $('.addboard input[type=text]').val("")
 $('.add_top_b input[type=text]').val("")
 
 $('.addboard').hide("slow")
+
+$('.labels').html("<%= j render 'functionalities/labels'%>")

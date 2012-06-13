@@ -9,4 +9,6 @@ class Board
 
   has_many :boards, :dependent => :destroy
   belongs_to :board
+
+  belongs_to :user
 end

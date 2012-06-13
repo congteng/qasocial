@@ -4,8 +4,6 @@
 
 jQuery ->
 	$(".addb").live "click", ->
-
-		alert "add"
 		
 		$(".addboard input[name='b_id']").val($(@).attr("data-id"))
 		$(".addboard span").text($(@).attr("data-name"))
@@ -21,10 +19,11 @@ jQuery ->
 
 	$('.delb').live "click",  ->
 		id = $(@).attr("data-id")
+		userid = $(@).attr("data-userid")
 		self = @
 		if confirm("确认删除模块?")
 			$.ajax({
-				url: "/boards/" + id,
+				url: "/users/" + userid + "/boards/" + id,
 				type: "DELETE"
 			}).done ->
 

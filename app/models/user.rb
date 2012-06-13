@@ -44,6 +44,9 @@ class User
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   has_many :schedules
+  has_many :boards
+  has_many :functionalities
+  
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 end
 

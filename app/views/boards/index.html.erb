@@ -5,14 +5,10 @@
 <%= render "functionalities/labels" %>
 
 <h3>开发规划(预览区域)</h3>
-<span class="label label-default">网站分为两大模块（增肌/减肥）</span>
-
 
 <div class='display_area'>
-	<%= recursion_board_without_button @boards %>
+	<%= recursion_board_without_button @user.boards.where(:board_id => nil) %>
 </div>
-
-<hr>
 
 <h3>开发规划(编辑区域)</h3>
 
@@ -24,7 +20,7 @@
 	<% end -%>
 </div>
 <div class='display_area_btn'>
-	<%= recursion_board_with_button @boards %>
+	<%= recursion_board_with_button @user.boards.where(:board_id => nil)  %>
 </div>
 
 <div class='addfoos'>
@@ -33,6 +29,7 @@
 		<div class='info'>给<span></span>增加功能</div>
 		<%= f.input :say, :label => "功能细节" %>
 		<input type='hidden' name='b_id'>
+		<input type='hidden' name='user_id' value='<%= @user.id %>'>
 		<%= f.submit "确认增加功能"%>
 	<% end -%>
 </div>
@@ -43,6 +40,8 @@
 		<div class='info'>给<span></span>增加子模块</div>		
 		<%= f.input :name, :label => "名称" %>
 		<input type="hidden" name='b_id'>
+		<input type='hidden' name='user_id' value='<%= @user.id %>'>
 		<%= f.submit "确认增加子模块" %>
 	<% end -%>
 </div>
+

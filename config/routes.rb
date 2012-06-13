@@ -8,6 +8,7 @@ Coach::Application.routes.draw do
 	
 	resources :users, :only => :show do
 		resources :schedules
+		resources :boards
 	end
 	resources :home, :only => :index do
 		collection do
@@ -15,7 +16,6 @@ Coach::Application.routes.draw do
 		end
 	end
 
-	resources :boards
 	resources :functionalities
-
+	resources :site_infos, :controller => "manager", :path => "manage"
 end

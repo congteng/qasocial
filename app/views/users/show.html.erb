@@ -1,4 +1,6 @@
 <p>用户名: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 
-<%= link_to "时间表", user_schedules_path(@user) %>
+
+<%= link_to	"计划", user_boards_path(@user) -%> <br>
+<%= link_to "时间表", user_schedules_path(@user) -%>

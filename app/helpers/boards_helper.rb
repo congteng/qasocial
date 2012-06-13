@@ -33,11 +33,11 @@ module BoardsHelper
 		html << "<ul>"
 			boards.each do |board|
 				html << "<li><span class='label label-warning'>\
-				<a href='/boards/#{board.id}'>#{board.name}</a></span>"
+				<a href='/users/#{board.user.id}/boards/#{board.id}'>#{board.name}</a></span>"
 				if with_button
 					html << "<button class='addf' data-name='#{board.name}' data-id='#{board.id}'>增加功能列表</button>\
 					<button class='addb' data-name='#{board.name}'	data-id='#{board.id}'>增加子模块</button>\
-					<button class='delb' data-id='#{board.id}'>删除</button>"
+					<button class='delb' data-id='#{board.id}' data-userid='#{board.user.id}'>删除</button>"
 				end
 				unless board.functionalities.empty?
 					html << "<ul>"
@@ -45,7 +45,7 @@ module BoardsHelper
 							html << "<li><span id='label-#{foo.id}' class='label label-#{foo_color foo}'>\
 							<a href='/functionalities/#{foo.id}'>#{foo.say}</a></span>"
 							
-							html << "<button class='delf' data-id='#{foo.id}'>删除</button></li>" if with_button
+							html << "<button class='delf' data-id='#{foo.id}' data-userid='#{foo.user.id}'>删除</button></li>" if with_button
 
 							html << "<div class='foo'>
 							<div class='progress progress-info progress-striped active'>\

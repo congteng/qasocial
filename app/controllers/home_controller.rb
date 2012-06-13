@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def plan
-  	@boards = Board.where(:board_id => nil)
+  	@user = User.where(:email => "congteng45@gmail.com").first
+  	@boards = Board.where(:board_id => nil, :user_id => @user.id)
   end
 end
